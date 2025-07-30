@@ -39,31 +39,31 @@ public class BStackDemo {
     public void test() {
         driver.get("https://bstackdemo.com/");
 
-        // Așteaptă și click pe butonul Sign In
+
         wait.until(ExpectedConditions.elementToBeClickable(By.id("signin"))).click();
 
-        // Așteaptă și click pe username dropdown, apoi pe 'demouser'
+
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"username\"]/div/div[1]"))).click();
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='demouser']"))).click();
 
-        // Așteaptă și click pe password dropdown, apoi pe parola
+
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"password\"]/div/div[1]"))).click();
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='testingisfun99']"))).click();
 
-        // Click pe login
+
         wait.until(ExpectedConditions.elementToBeClickable(By.id("login-btn"))).click();
 
-        // Așteaptă să fie vizibil elementul produsului și click pe el
+
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"1\"]/div[4]"))).click();
 
-        // Verifică dacă produsul "iPhone 12" este afișat
+
         WebElement produs = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[text()='iPhone 12']")));
         assertTrue(produs.isDisplayed());
 
-        // Click pe butonul de cumpărare
+
         wait.until(ExpectedConditions.elementToBeClickable(By.className("buy-btn"))).click();
 
-        // Completează formularul de shipping
+
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("firstNameInput"))).sendKeys("alex");
         driver.findElement(By.id("lastNameInput")).sendKeys("mihai");
         driver.findElement(By.id("addressLine1Input")).sendKeys("Calea Martirilor");
