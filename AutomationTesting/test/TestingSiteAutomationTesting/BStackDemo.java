@@ -70,26 +70,26 @@ public class BStackDemo {
         driver.findElement(By.id("provinceInput")).sendKeys("Timisoara");
         driver.findElement(By.id("postCodeInput")).sendKeys("307220");
 
-        // Click pe continue
+
         wait.until(ExpectedConditions.elementToBeClickable(By.id("checkout-shipping-continue"))).click();
 
-        // Verifică mesajul de confirmare
+
         WebElement message = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("confirmation-message")));
         String actualMessage = message.getText();
         String expectedMessage = "Your Order has been successfully placed.";
         assertEquals(expectedMessage, actualMessage, "Textul nu este cel asteptat");
 
-        // Verifică textul cu numărul comenzii
+
         WebElement orderText = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"checkout-app\"]/div/div/div/ol/li/div/div/div[2]")));
         String actualText = orderText.getText();
         assertTrue(actualText.contains("Your order number is"));
 
-        // Verifică prețul total
+
         WebElement totalPrice = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"checkout-app\"]/div/div/aside/article/section[2]/div/div/span[2]/span")));
         String actualTotalPrice = totalPrice.getText();
         assertEquals("$799.00", actualTotalPrice, "pretul este diferit");
 
-        // Click pe butonul final
+
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"checkout-app\"]/div/div/div/div/a/button"))).click();
     }
 
