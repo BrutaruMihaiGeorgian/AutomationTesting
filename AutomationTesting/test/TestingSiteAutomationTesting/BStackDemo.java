@@ -64,11 +64,11 @@ public class BStackDemo {
         wait.until(ExpectedConditions.elementToBeClickable(By.className("buy-btn"))).click();
 
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("firstNameInput"))).sendKeys("alex");
-        driver.findElement(By.id("lastNameInput")).sendKeys("mihai");
-        driver.findElement(By.id("addressLine1Input")).sendKeys("Calea Martirilor");
-        driver.findElement(By.id("provinceInput")).sendKeys("Timisoara");
-        driver.findElement(By.id("postCodeInput")).sendKeys("307220");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("firstNameInput"))).sendKeys("Brutaru");
+        driver.findElement(By.id("lastNameInput")).sendKeys("Mihai");
+        driver.findElement(By.id("addressLine1Input")).sendKeys("Strada Viilor");
+        driver.findElement(By.id("provinceInput")).sendKeys("Oltenita");
+        driver.findElement(By.id("postCodeInput")).sendKeys("917025");
 
 
         wait.until(ExpectedConditions.elementToBeClickable(By.id("checkout-shipping-continue"))).click();
