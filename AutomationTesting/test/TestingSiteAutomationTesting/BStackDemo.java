@@ -68,7 +68,7 @@ public class BStackDemo {
         driver.findElement(By.id("lastNameInput")).sendKeys("Mihai");
         driver.findElement(By.id("addressLine1Input")).sendKeys("Strada Viilor");
         driver.findElement(By.id("provinceInput")).sendKeys("Oltenita");
-        driver.findElement(By.id("postCodeInput")).sendKeys("917025");
+        driver.findElement(By.id("postCodeInput")).sendKeys("917025p");
 
 
         wait.until(ExpectedConditions.elementToBeClickable(By.id("checkout-shipping-continue"))).click();
